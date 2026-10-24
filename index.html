@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#04001c">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <script>
+      /* "lite" mode = phones, tablets, touch devices, data-saver.  No 3D / no video background / no heavy effects. */
+      (function(){
+        var c = navigator.connection || {};
+        var lite = window.innerWidth <= 1024 ||
+                   (window.matchMedia && window.matchMedia('(hover: none)').matches) ||
+                   c.saveData === true;
+        if (lite) document.documentElement.classList.add('lite');
+      })();
+    </script>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <title>Dev. Shaon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+</head>
+<body>
+
+    <div class="preloader">
+        <!-- Pixel grid elements -->
+        <div class="pixel-grid">
+          <div class="pixel-row" id="top-row"></div>
+          <div class="pixel-row" id="bottom-row"></div>
+          <div class="pixel-column" id="left-column"></div>
+          <div class="pixel-column" id="right-column"></div>
+        </div>
+      
+        <!-- Massive counter -->
+        <div class="counter-wrapper">
+          <div class="counter" id="counter">0</div>
+          <div class="counter-outline" aria-hidden="true">0</div>
+        </div>
+      
+        <!-- Status text -->
+        <div class="text-container">
+          <div class="loading-text">LOADING SYSTEM</div>
+          <div class="system-messages">
+            <div class="message">INITIALIZING</div>
+            <div class="message">DATA_TRANSFER</div>
+            <div class="message">COMPILING</div>
+            <div class="message">FINALIZING</div>
+            <div class="message">COMPLETE</div>
+          </div>
+        </div>
+      
+        <!-- Progress markers -->
+        <div class="loading-bar-container">
+          <div class="loading-bar">
+            <div class="progress"></div>
+          </div>
+          <div class="loading-bar-markers">
+            <div class="marker" data-position="0">00</div>
+            <div class="marker" data-position="25">25</div>
+            <div class="marker" data-position="50">50</div>
+            <div class="marker" data-position="75">75</div>
+            <div class="marker" data-position="100">100</div>
+          </div>
+          <!-- Progressive line fills -->
+          <div class="connector-lines">
+            <div class="connector-line" id="line-0-25"></div>
+            <div class="connector-line" id="line-25-50"></div>
+            <div class="connector-line" id="line-50-75"></div>
+            <div class="connector-line" id="line-75-100"></div>
+          </div>
+        </div>
+      
+        <!-- Block elements that progressively fill -->
+        <div class="block-container">
+          <div class="block" id="block-1"></div>
+          <div class="block" id="block-2"></div>
+          <div class="block" id="block-3"></div>
+          <div class="block" id="block-4"></div>
+        </div>
+      </div>
+    
+
+
+   <div class="container">
+    <video class="back-vid" loop muted playsinline preload="none" data-src="videos/galaxy.mp4"></video>
+
+
+    <header>
+        <div class="left">
+            <img data-aos="fade-down" data-aos-duration="1000" src="images/logo.webp" width="75" height="75" alt="Dev.Shaon logo">
+            <h1 data-aos="fade-down" data-aos-duration="1000"><span style="color: rgb(12, 129, 207);">Dev.</span>Shaon</h1>
+        </div>
+
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><i class='bx bx-menu'></i></button>
+
+        <ul class="nav-links">
+            <li data-aos="fade-down" data-aos-duration="1200"><a href="#about">About</a></li>
+            <li data-aos="fade-down" data-aos-duration="1800"><a href="#skill">Skills</a></li>
+            <li data-aos="fade-down" data-aos-duration="2000"><a href="#projects">Projects</a></li>
+            <li data-aos="fade-down" data-aos-duration="2200"><a href="#reviews">Reviews</a></li>
+            <li class="nav-contact"><a href="#contactme">Contact</a></li>
+        </ul>
+
+        <div class="box-icons">
+
+            <a data-aos="fade-down" data-aos-duration="1000" href="https://www.linkedin.com/in/developershaon/"><i class='bx bxl-linkedin-square'></i></a>
+            <a data-aos="fade-down" data-aos-duration="1000" href="https://www.facebook.com/developershaon"><i class='bx bxl-facebook-circle' ></i></a>
+            <a data-aos="fade-down" data-aos-duration="1000" href="https://www.youtube.com/@DevSha0n"><i class='bx bxl-youtube'></i></a>
+
+
+        </div>
+    
+    </header>
+
+    <div class="blackhole-box">
+        <video loop muted playsinline preload="none" data-src="videos/blackhole.mp4"></video>
+    </div>
+
+    <!-- hero section -->
+
+    <section class="hero">
+        <div class="hero-info">
+            <div class="hero-info-title" data-aos="fade-right" data-aos-duration="1500">
+                <i class='bx bxl-sketch' ></i>
+                Full-Stack Developer &amp; WordPress Expert
+            </div>
+            <h1 data-aos="fade-right" data-aos-duration="1500">I Build <span class="gradient">Modern Web</span> Experiences</h1>
+            <div class="hero-role" >I'm a <span class="typed" id="typed">WordPress Developer</span><span class="cursor">|</span></div>
+            <p >From high-performance WordPress themes and plugins to scalable MERN Stack applications and custom software, I turn ideas into reliable, user-friendly digital experiences.</p>
+
+            <div class="hero-btns" data-aos="fade-up" data-aos-duration="1000">
+                <a href="#contactme"><button class="btn-primary">Let's Talk <i class='bx bx-right-arrow-alt'></i></button></a>
+                <a href="images/Shawon CV.pdf" download><button><i class='bx bx-download'></i> Download CV</button></a>
+            </div>
+
+            <ul class="hero-chips" data-aos="fade-up" data-aos-duration="1200">
+                <li><i class='bx bx-check-circle'></i> 100+ Projects Delivered</li>
+                <li><i class='bx bx-globe'></i> Clients Worldwide</li>
+                <li><i class='bx bxl-wordpress'></i> WordPress &amp; MERN</li>
+            </ul>
+        </div>
+
+        <div data-aos="fade-zoom-in"
+        data-aos-easing="ease-in-back"
+        data-aos-delay="300"
+        data-aos-offset="0"
+        data-aos-duration="1000" data-aos-duration="1500" class="hero-vid-box">
+            <img class="hero-fallback" src="images/logo-512.webp" width="512" height="512" alt="Dev.Shaon">
+   
+        </div>
+
+
+         <div class="scroll-down"></div>
+
+
+
+    </section>
+
+
+
+    <!-- abuto section -->
+
+    <section id="about" data-aos="fade-up" class="info-section">
+        <h1 class="section-title">Hello, There 👋</h1>
+
+        <div class="about-grid">
+
+            <!-- Intro -->
+            <article class="about-card">
+                <h2>Hi, I'm Shawon Sheikh</h2>
+                <p>I'm a passionate Full-Stack Developer, WordPress Designer &amp; Developer specializing in building modern websites, powerful web applications, and custom digital solutions. From developing high-performance WordPress themes and plugins to creating scalable MERN Stack applications and tailored software, I turn ideas into reliable, user-friendly digital experiences.</p>
+                <img class="about-photo" width="546" height="457" decoding="async" src="./images/devshaonoic.webp" alt="Shawon Sheikh">
+            </article>
+
+            <!-- Tech stack -->
+            <article class="about-card">
+                <h2>Tech Stack &amp; Expertise</h2>
+                <p>I work with modern technologies to build, customize, and optimize websites and applications, including:</p>
+                <ul class="about-list">
+                    <li><strong>WordPress Development:</strong> Custom Theme Development, Plugin Development, WooCommerce, Theme Customization, and Advanced Bug Fixing.</li>
+                    <li><strong>MERN Stack Development:</strong> MongoDB, Express.js, React.js, and Node.js for dynamic, scalable web applications.</li>
+                    <li><strong>Custom Software Development:</strong> Tailored business solutions, API integrations, automation tools, and feature-rich applications.</li>
+                    <li><strong>Frontend Development:</strong> HTML5, CSS3, JavaScript, Bootstrap, and responsive UI/UX implementation.</li>
+                    <li><strong>Backend Development:</strong> PHP, MySQL, REST APIs, database management, and server-side development.</li>
+                </ul>
+                <p>I focus on writing clean, maintainable code and delivering solutions that balance performance, functionality, and user experience.</p>
+                <img class="about-img" src="./images/grid2.webp" loading="lazy" alt="Technology stack">
+            </article>
+
+            <!-- Global collaboration -->
+            <article class="about-card">
+                <h2>Flexible Communication &amp; Global Collaboration</h2>
+                <p>I work with clients across different time zones and adapt to diverse project requirements. Whether you need a new website, an existing WordPress site improved, a custom plugin, or a complete web application, I prioritize clear communication, reliable delivery, and long-term collaboration.</p>
+                <video class="about-img" loop muted playsinline preload="none" data-src="videos/glob.mp4"></video>
+            </article>
+
+            <!-- WordPress -->
+            <article class="about-card">
+                <h2>WordPress Designer &amp; Developer</h2>
+                <p>I specialize in creating custom WordPress themes and plugins, extending existing functionality, resolving complex technical issues, and developing tailored solutions for unique business needs. My goal is to make every website fast, responsive, secure, and easy to manage.</p>
+                <div class="about-wp"><i class='bx bxl-wordpress'></i></div>
+            </article>
+
+            <!-- Passion + CTA -->
+            <article class="about-card about-wide">
+                <div class="about-wide-text">
+                    <h2>My Passion for Coding</h2>
+                    <p>I love solving complex problems and transforming creative ideas into practical digital solutions. From crafting engaging interfaces to building robust backend systems, I enjoy every stage of development.</p>
+                    <p>Whether it's a custom WordPress solution, a MERN Stack application, or specialized business software, I'm always excited to explore new technologies, overcome challenges, and build something meaningful.</p>
+                    <p class="about-cta-text"><strong>Have a project in mind? Let's turn your idea into reality.</strong></p>
+                    <a href="#contactme"><button class="about-btn"><i class='bx bx-link-external'></i> Contact Me</button></a>
+                </div>
+                <img class="about-img" src="./images/grid4.webp" loading="lazy" alt="Coding">
+            </article>
+
+        </div>
+    </section>
+
+
+
+
+
+   
+
+
+    <!-- skill section  -->
+
+    <section id="skill" data-aos="fade-up" class="sk-section">
+
+        <h1 class="section-title">My Skills 💪</h1>
+        <p class="section-sub">Modern tools and technologies I use to build fast, scalable and user-friendly digital products.</p>
+
+
+        <div class="sk-grid">
+            <article class="sk-card" data-aos="fade-up">
+                <div class="sk-ico"><i class='bx bxl-wordpress'></i></div>
+                <h3>WordPress Development</h3>
+                <p>Custom themes and plugins built to be fast, secure and easy to manage.</p>
+                <ul class="sk-chips"><li>Custom Themes</li><li>Plugin Development</li><li>WooCommerce</li><li>Theme Customization</li><li>Advanced Bug Fixing</li></ul>
+            </article>
+            <article class="sk-card" data-aos="fade-up">
+                <div class="sk-ico"><i class='bx bxl-react'></i></div>
+                <h3>MERN Stack Development</h3>
+                <p>Dynamic, scalable web applications from database to interface.</p>
+                <ul class="sk-chips"><li>MongoDB</li><li>Express.js</li><li>React.js</li><li>Node.js</li></ul>
+            </article>
+            <article class="sk-card" data-aos="fade-up">
+                <div class="sk-ico"><i class='bx bx-laptop'></i></div>
+                <h3>Frontend Development</h3>
+                <p>Pixel-perfect, responsive interfaces that feel great on every device.</p>
+                <ul class="sk-chips"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Bootstrap</li><li>Responsive UI/UX</li></ul>
+            </article>
+            <article class="sk-card" data-aos="fade-up">
+                <div class="sk-ico"><i class='bx bx-server'></i></div>
+                <h3>Backend Development</h3>
+                <p>Reliable server-side logic, databases and APIs.</p>
+                <ul class="sk-chips"><li>PHP</li><li>MySQL</li><li>REST APIs</li><li>Database Management</li></ul>
+            </article>
+            <article class="sk-card" data-aos="fade-up">
+                <div class="sk-ico"><i class='bx bx-cog'></i></div>
+                <h3>Custom Software</h3>
+                <p>Tailored solutions that fit your business workflow.</p>
+                <ul class="sk-chips"><li>Business Solutions</li><li>API Integrations</li><li>Automation Tools</li></ul>
+            </article>
+            <article class="sk-card" data-aos="fade-up">
+                <div class="sk-ico"><i class='bx bx-palette'></i></div>
+                <h3>Design &amp; UI/UX</h3>
+                <p>Clean layouts and user-friendly experiences with a modern look.</p>
+                <ul class="sk-chips"><li>UI/UX Design</li><li>Figma</li><li>Landing Pages</li><li>Responsive Design</li></ul>
+            </article>
+        </div>
+
+        <div class="slider" reverse="true" style="
+            --width:100px;
+            --height: 100px;
+            --quantity:8;
+            ">
+
+            <div class="list">
+                <div class="item" style="--position:1;"><img src="images/1s.webp" width="100" height="100" loading="lazy" decoding="async" alt=""></div>
+                <div class="item" style="--position:3;"><img src="images/2s.webp" width="100" height="100" loading="lazy" decoding="async" alt=""></div>
+                <div class="item" style="--position:4;"><img src="images/3s.webp" width="100" height="100" loading="lazy" decoding="async" alt=""></div>
+                <div class="item" style="--position:6;"><img src="images/4s.webp" width="100" height="100" loading="lazy" decoding="async" alt=""></div>
+                <div class="item" style="--position:8;"><img src="images/5s.webp" width="100" height="100" loading="lazy" decoding="async" alt=""></div>
+                <div class="item" style="--position:2;"><img src="images/6s.webp" width="100" height="100" loading="lazy" decoding="async" alt=""></div>
+                <div class="item" style="--position:7;"><img src="images/7.webp" width="100" height="100" loading="lazy" decoding="async" alt=""></div>
+                <div class="item" style="--position:5;"><img src="images/10s.webp" width="100" height="100" loading="lazy" decoding="async" alt=""></div>
+            </div>
+            </div>
+
+    </section>
+
+ 
+<!-- project scrion -->
+
+<section id="projects" data-aos="fade-up" class="my-projects">
+    <h1 class="section-title ">My Projects 🖥️</h1>
+
+    <div class="project-card">
+        <div class="project-vidbox" data-aos="fade-up-right">
+            
+            <div class="image-wrap">
+                <a href="https://al-shalaal.nl/" target="_blank">
+                    <img id="projectvideo1" src="images/ex3.webp" width="1000" height="3399" loading="lazy" decoding="async" alt="E-commerce project" />
+                </a>
+            </div>
+            
+            <!-- <video id="projectvideo1" src="videos/low/project1.mp4"></video> -->
+            <div class="hoversing"></div>
+        </div>
+        <div data-aos="fade-up-left" data-aos-duration="1200" class="project-info">
+            <h1>Fully-Functional <span class="gradient">E-commerce</span> Website</h1>
+
+            <p>Developed a feature-rich online store with a seamless user experience, secure payment gateway, and optimized performance.</p>
+            <a href="https://al-shalaal.nl/" target="_blank"><button><i class='bx bx-link-external'></i> Website</button></a>
+        </div>
+
+        
+    </div>
+
+    
+    <div class="project-card">
+        <div class="project-vidbox" data-aos="fade-up-right">
+
+            <div class="image-wrap">
+                <a href="https://salembiriyanihotel.com/" target="_blank">
+                    <img id="projectvideo2" src="images/ex2.webp" width="1000" height="3209" loading="lazy" decoding="async" alt="Restofood plugin project" />
+                </a>
+            </div>
+            <!-- <video id="projectvideo2" src="videos/low/project2.mp4"></video> -->
+            
+            
+        </div>
+        <div class="project-info" data-aos="fade-up-left" data-aos-duration="1800">
+            <h1>WooCommerce <span class="gradient">Plugin</span> Restofood</h1>
+
+            <p>Designed and built custom WordPress plugins to extend website functionalities, improving efficiency and user engagement.</p>
+            <a href="https://salembiriyanihotel.com/" target="_blank"><button><i class='bx bx-link-external'></i> Website</button></a>
+
+        </div>
+
+    </div>
+
+
+    
+    <div class="project-card">
+        <div class="project-vidbox" data-aos="fade-up-right">
+
+            <div class="image-wrap">
+                <a href="https://uptec.up.pt/" target="_blank">
+                    <img id="projectvideo3" src="images/ex5.webp" width="1000" height="2878" loading="lazy" decoding="async" alt="Landing page project" />
+                </a>
+            </div>
+            <!-- <video id="projectvideo3" src="videos/low/project3.mp4"></video> -->
+            
+        </div>
+        <div class="project-info" data-aos="fade-up-left" data-aos-duration="2000">
+            <h1>Modern <span class="gradient">Landing</span> page</h1>
+
+            <p>Created a sleek and responsive landing page tailored for high conversion rates and excellent user experience.</p>
+            <a href="https://uptec.up.pt/" target="_blank"><button><i class='bx bx-link-external'></i> Website</button></a>
+            
+        </div>
+
+        
+    </div>
+
+</section>
+
+
+
+
+
+
+    <!-- ================= MORE PROJECTS =================
+         SAMPLE CARDS: edit the title, text, tech tags and href.
+         To use a real screenshot, add inside the .mp-thumb link:
+         <img src="images/your-screenshot.png" alt="Project name" loading="lazy">
+    ==================================================== -->
+    <section id="more-projects" class="more-projects" data-aos="fade-up">
+        <h1 class="section-title">More <span class="gradient">Projects</span> 🚀</h1>
+        <p class="section-sub">A selection of other websites, plugins and tools I've built for clients around the world.</p>
+
+        <div class="mp-grid">
+
+            <article class="mp-card" data-aos="fade-up">
+                <a class="mp-thumb" href="#" target="_blank" rel="noopener" style="--c1:#0f2a8a;--c2:#6600c5">
+                    <i class='bx bx-store'></i>
+                    <span class="mp-tag">E-commerce</span>
+                </a>
+                <div class="mp-body">
+                    <h2>WooCommerce Fashion Store</h2>
+                    <p>Full online shop with custom product filters, wishlist, secure checkout and lightning-fast performance.</p>
+                    <ul class="mp-tech"><li>WordPress</li><li>WooCommerce</li><li>Elementor</li></ul>
+                    <a class="mp-link" href="#contactme" target="_blank" rel="noopener"><i class='bx bx-link-external'></i>Order</a>
+                </div>
+            </article>
+
+            <article class="mp-card" data-aos="fade-up" data-aos-delay="100">
+                <a class="mp-thumb" href="#" target="_blank" rel="noopener" style="--c1:#006d77;--c2:#2a46ff">
+                    <i class='bx bx-building-house'></i>
+                    <span class="mp-tag">Real Estate</span>
+                </a>
+                <div class="mp-body">
+                    <h2>Real Estate Listing Portal</h2>
+                    <p>Property listing website with advanced search, map view, agent profiles and enquiry forms.</p>
+                    <ul class="mp-tech"><li>WordPress</li><li>ACF</li><li>Custom Post Types</li></ul>
+                    <a class="mp-link" href="#contactme" target="_blank" rel="noopener"><i class='bx bx-link-external'></i>Order</a>
+                </div>
+            </article>
+
+            <article class="mp-card" data-aos="fade-up" data-aos-delay="200">
+                <a class="mp-thumb" href="#" target="_blank" rel="noopener" style="--c1:#7e42a7;--c2:#c2185b">
+                    <i class='bx bx-restaurant'></i>
+                    <span class="mp-tag">Restaurant</span>
+                </a>
+                <div class="mp-body">
+                    <h2>Restaurant Online Ordering</h2>
+                    <p>Menu, table booking and online ordering system that helped the restaurant take orders 24/7.</p>
+                    <ul class="mp-tech"><li>React.js</li><li>Express.js</li><li>Node.js</li></ul>
+                    <a class="mp-link" href="#contactme" target="_blank" rel="noopener"><i class='bx bx-link-external'></i>Order</a>
+                </div>
+            </article>
+
+            <article class="mp-card" data-aos="fade-up">
+                <a class="mp-thumb" href="#" target="_blank" rel="noopener" style="--c1:#1a237e;--c2:#0099ff">
+                    <i class='bx bx-briefcase'></i>
+                    <span class="mp-tag">Corporate</span>
+                </a>
+                <div class="mp-body">
+                    <h2>Corporate Business Website</h2>
+                    <p>Clean, professional company website with service pages, blog and SEO-ready structure.</p>
+                    <ul class="mp-tech"><li>WordPress</li><li>Elementor</li><li>SEO</li></ul>
+                    <a class="mp-link" href="#contactme" target="_blank" rel="noopener"><i class='bx bx-link-external'></i>Order</a>
+                </div>
+            </article>
+
+            <article class="mp-card" data-aos="fade-up" data-aos-delay="100">
+                <a class="mp-thumb" href="#" target="_blank" rel="noopener" style="--c1:#4527a0;--c2:#00acc1">
+                    <i class='bx bx-calendar-check'></i>
+                    <span class="mp-tag">Custom Plugin</span>
+                </a>
+                <div class="mp-body">
+                    <h2>Custom Booking System</h2>
+                    <p>Tailor-made WordPress plugin for appointments with email notifications and an admin dashboard.</p>
+                    <ul class="mp-tech"><li>PHP</li><li>MySQL</li><li>REST API</li></ul>
+                    <a class="mp-link" href="#contactme" target="_blank" rel="noopener"><i class='bx bx-link-external'></i> Order</a>
+                </div>
+            </article>
+
+            <article class="mp-card" data-aos="fade-up" data-aos-delay="200">
+                <a class="mp-thumb" href="#" target="_blank" rel="noopener" style="--c1:#283593;--c2:#e65100">
+                    <i class='bx bx-palette'></i>
+                    <span class="mp-tag">Portfolio</span>
+                </a>
+                <div class="mp-body">
+                    <h2>Creative Agency Portfolio</h2>
+                    <p>Eye-catching animated portfolio site with smooth transitions and a fully responsive layout.</p>
+                    <ul class="mp-tech"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+                    <a class="mp-link" href="#contactme" target="_blank" rel="noopener"><i class='bx bx-link-external'></i> Order</a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- ================= STATS =================
+         Edit the numbers: data-target="100" and the text shown inside. -->
+    <section id="stats" class="stats" data-aos="fade-up">
+        <div class="stat">
+            <i class='bx bx-task'></i>
+            <h3><span class="count" data-target="100">100</span>+</h3>
+            <p>Projects Completed</p>
+        </div>
+        <div class="stat">
+            <i class='bx bx-smile'></i>
+            <h3><span class="count" data-target="96+">96+</span>+</h3>
+            <p>Happy Clients</p>
+        </div>
+        <div class="stat">
+            <i class='bx bx-time-five'></i>
+            <h3><span class="count" data-target="11+">11+</span>+</h3>
+            <p>Years Experience</p>
+        </div>
+        <div class="stat">
+            <i class='bx bx-star'></i>
+            <h3><span class="count" data-target="5" data-decimals="1">5.0</span></h3>
+            <p>Average Rating</p>
+        </div>
+    </section>
+
+
+
+    <!-- ================= TESTIMONIALS =================
+         SAMPLE REVIEWS: replace names, roles, text and initials with your REAL client feedback. -->
+    <section id="reviews" class="reviews" data-aos="fade-up">
+        <h1 class="section-title">What <span class="gradient">Clients</span> Say 💬</h1>
+        <p class="section-sub">Over 100 projects delivered. Here's what some of my customers have to say.</p>
+
+        <div class="rv-track" tabindex="0" aria-label="Client reviews">
+
+            <figure class="rv-card">
+                <div class="rv-stars" aria-label="5 out of 5 stars"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i></div>
+                <blockquote>Shaon rebuilt our online store and sales went up within the first month. Fast, professional and always available when we needed him.</blockquote>
+                <figcaption>
+                    <span class="rv-avatar">MR</span>
+                    <div><strong>Michael R.</strong><small>Store Owner · Netherlands</small></div>
+                </figcaption>
+            </figure>
+
+            <figure class="rv-card">
+                <div class="rv-stars" aria-label="5 out of 5 stars"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i></div>
+                <blockquote>He fixed a critical plugin problem that two other developers couldn't solve. Clear communication and delivered ahead of schedule.</blockquote>
+                <figcaption>
+                    <span class="rv-avatar">SK</span>
+                    <div><strong>Sarah K.</strong><small>Marketing Manager · UK</small></div>
+                </figcaption>
+            </figure>
+
+            <figure class="rv-card">
+                <div class="rv-stars" aria-label="5 out of 5 stars"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i></div>
+                <blockquote>Our new restaurant website looks amazing on every device and the ordering system works perfectly. Highly recommended!</blockquote>
+                <figcaption>
+                    <span class="rv-avatar">AH</span>
+                    <div><strong>Ahmed H.</strong><small>Restaurant Owner · UAE</small></div>
+                </figcaption>
+            </figure>
+
+            <figure class="rv-card">
+                <div class="rv-stars" aria-label="5 out of 5 stars"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i></div>
+                <blockquote>Great attention to detail and very easy to work with. He understood what we wanted from the first call and delivered exactly that.</blockquote>
+                <figcaption>
+                    <span class="rv-avatar">EL</span>
+                    <div><strong>Emma L.</strong><small>Startup Founder · USA</small></div>
+                </figcaption>
+            </figure>
+
+            <figure class="rv-card">
+                <div class="rv-stars" aria-label="5 out of 5 stars"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i></div>
+                <blockquote>The custom booking plugin saved us hours every week. Clean code, great support after launch, and fair pricing.</blockquote>
+                <figcaption>
+                    <span class="rv-avatar">DP</span>
+                    <div><strong>Daniel P.</strong><small>Clinic Director · Canada</small></div>
+                </figcaption>
+            </figure>
+
+            <figure class="rv-card">
+                <div class="rv-stars" aria-label="5 out of 5 stars"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i></div>
+                <blockquote>Our site loads twice as fast and finally looks as professional as our business. I'll definitely hire him again for the next project.</blockquote>
+                <figcaption>
+                    <span class="rv-avatar">NB</span>
+                    <div><strong>Nadia B.</strong><small>Agency Owner · Germany</small></div>
+                </figcaption>
+            </figure>
+
+        </div>
+
+        <div class="rv-controls">
+            <button class="rv-btn rv-prev" aria-label="Previous review"><i class='bx bx-chevron-left'></i></button>
+            <div class="rv-dots" aria-hidden="true"></div>
+            <button class="rv-btn rv-next" aria-label="Next review"><i class='bx bx-chevron-right'></i></button>
+        </div>
+
+        <a class="rv-cta" href="#contactme"><button>Start Your Project <i class='bx bx-right-arrow-alt'></i></button></a>
+    </section>
+
+
+    <!-- contact us -->
+
+    <section id="contactme" class="ct-section" data-aos="fade-up">
+
+        <div class="ct-head">
+            <span class="ct-badge"><i class='bx bxs-circle'></i> Available for new projects</span>
+            <h1 class="section-title">Let's Build Something <span class="gradient">Amazing</span> Together</h1>
+            <p class="section-sub">Whether you're looking to build a new website, improve your existing platform, or bring a unique e-commerce project to life, I am here to help.</p>
+        </div>
+
+        <div class="ct-grid">
+
+            <div class="ct-info">
+                <a class="ct-item" href="tel:+8801902929139">
+                    <span class="ct-ico"><i class='bx bxs-phone-call'></i></span>
+                    <span class="ct-txt"><small>Call me</small><strong>+8801902929139</strong></span>
+                </a>
+                <a class="ct-item" href="https://wa.me/+8801902929139" target="_blank" rel="noopener">
+                    <span class="ct-ico"><i class='bx bxl-whatsapp'></i></span>
+                    <span class="ct-txt"><small>WhatsApp</small><strong>Live Chat</strong></span>
+                </a>
+                <a class="ct-item" href="mailto:developershaon11@gmail.com">
+                    <span class="ct-ico"><i class='bx bx-envelope'></i></span>
+                    <span class="ct-txt"><small>Email me</small><strong>developershaon11@gmail.com</strong></span>
+                </a>
+
+                <div class="ct-socials">
+                    <span>Follow me</span>
+                    <a href="https://www.linkedin.com/in/developershaon/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://www.facebook.com/developershaon" target="_blank" rel="noopener" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://www.youtube.com/@DevSha0n" target="_blank" rel="noopener" aria-label="YouTube"><i class='bx bxl-youtube'></i></a>
+                    <a href="https://wa.me/+8801902929139" target="_blank" rel="noopener" aria-label="WhatsApp"><i class='bx bxl-whatsapp'></i></a>
+                </div>
+
+                <p class="ct-note"><i class='bx bx-time-five'></i> Working with clients across all time zones.</p>
+            </div>
+
+            <form action="https://formspree.io/f/xwplnnll" method="POST" class="ct-form">
+                <h2>Send me a message</h2>
+                <input type="hidden" name="_subject" value="New message from portfolio website">
+
+                <div class="ct-row">
+                    <div class="ct-field">
+                        <i class='bx bx-user'></i>
+                        <input type="text" id="ct-name" name="name" placeholder=" " autocomplete="name" required>
+                        <label for="ct-name">Full Name</label>
+                    </div>
+                    <div class="ct-field">
+                        <i class='bx bx-envelope'></i>
+                        <input type="email" id="ct-email" name="email" placeholder=" " autocomplete="email" required>
+                        <label for="ct-email">Email Address</label>
+                    </div>
+                </div>
+
+                <div class="ct-field">
+                    <i class='bx bx-briefcase'></i>
+                    <select id="ct-type" name="project_type" required>
+                        <option value="" disabled selected hidden></option>
+                        <option>WordPress Website</option>
+                        <option>WooCommerce Store</option>
+                        <option>Plugin / Theme Development</option>
+                        <option>MERN Stack Web App</option>
+                        <option>Custom Software</option>
+                        <option>Bug Fixing / Maintenance</option>
+                        <option>Other</option>
+                    </select>
+                    <label for="ct-type">Project Type</label>
+                </div>
+
+                <div class="ct-field ct-area">
+                    <i class='bx bx-message-square-detail'></i>
+                    <textarea id="ct-msg" name="message" placeholder=" " required></textarea>
+                    <label for="ct-msg">Tell me about your project</label>
+                </div>
+
+                <button type="submit" class="ct-submit"><span>Send Message</span> <i class='bx bx-send'></i></button>
+                <p class="ct-status" role="status" aria-live="polite"></p>
+            </form>
+
+        </div>
+    </section>
+
+
+
+
+
+
+    <footer>
+        <h1>Copyright ©️ Dev.Shaon, Made with ❤️ by DeveloperShaon</h1>
+    </footer>
+
+
+   </div>
+    
+   
+
+
+
+<!-- js scrript here -->
+
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+   <script defer src="https://unpkg.com/aos@next/dist/aos.js"></script>
+   <script defer src="./app.js"></script>
+   <script defer src="./perf.js"></script>
+<!-- js scrript here -->
+
+</body>
+</html>
