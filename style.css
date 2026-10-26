@@ -2556,4 +2556,6 @@ html.lite .ct-badge i{ animation: none; }
 }
 
 
-
+.headerlogo{
+    height: auto !important;
+}
